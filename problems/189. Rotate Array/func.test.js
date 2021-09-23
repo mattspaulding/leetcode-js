@@ -16,7 +16,7 @@ test("Example 2", () => {
 
   expect(func(nums, k)).toEqual(expected);
 });
-test("Example 2", () => {
+test("Example 3", () => {
   const nums = [1, 2];
   const k = 5;
 
