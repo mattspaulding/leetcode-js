@@ -9,7 +9,10 @@ test("Example 1", () => {
       val: 2,
       left: {
         val: 3,
+        left: null,
+        right: null,
       },
+      right: null,
     },
   };
 
