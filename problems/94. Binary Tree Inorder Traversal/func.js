@@ -17,15 +17,17 @@ var inorderTraversal = function (root) {
 
   const stack = [];
   const result = [];
+  let p = root;
 
-  while (root !== null || stack.length !== 0) {
-    while (root !== null) {
-      stack.push(root);
-      root = root.left;
+  while (p !== null || stack.length !== 0) {
+    if (p != null) {
+      stack.push(p);
+      p = p.left;
+    } else {
+      const node = stack.pop();
+      result.push(node.val); // Add after all left children
+      p = node.right;
     }
-    root = stack.pop();
-    result.push(root.val);
-    root = root.right;
   }
   return result;
 };

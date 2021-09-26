@@ -11,14 +11,6 @@
  * @return {number[]}
  */
 var preorderTraversal = function (root) {
-  /**
-   * Algorithm:
-   * 1. Create an empty stack [];
-   * 2. Do while stack is not empty:
-   * 2.1. Pop an item from stack and add it to the 'result' array.
-   * 2.2. Push 'right child' of popped item to stack.
-   * 2.3. Push 'left child' of popped item to stack.
-   */
   if (root == null) {
     return [];
   }
@@ -26,14 +18,17 @@ var preorderTraversal = function (root) {
   const stack = [];
   const result = [];
 
-  stack.push(root);
+  let p = root;
 
-  while (stack.length > 0) {
-    let current = stack.pop();
-    result.push(current.val);
-
-    if (current.right) stack.push(current.right);
-    if (current.left) stack.push(current.left);
+  while (p !== null || stack.length !== 0) {
+    if (p != null) {
+      stack.push(p);
+      result.push(p.val); // Add before going to children
+      p = p.left;
+    } else {
+      const node = stack.pop();
+      p = node.right;
+    }
   }
 
   return result;

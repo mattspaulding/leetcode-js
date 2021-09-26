@@ -17,15 +17,16 @@ var postorderTraversal = function (root) {
 
   let result = [];
   let stack = [];
+  let p = root;
 
-  while (root != null || stack.length) {
-    if (root != null) {
-      stack.push(root);
-      result.unshift(root.val);
-      root = root.right;
+  while (p != null || stack.length) {
+    if (p != null) {
+      stack.push(p);
+      result.unshift(p.val); // Reverse the process of preorder
+      p = p.right; // Reverse the process of preorder
     } else {
-      const node=stack.pop();
-      root = node.left;
+      const node = stack.pop();
+      p = node.left; // Reverse the process of preorder
     }
   }
   return result;
