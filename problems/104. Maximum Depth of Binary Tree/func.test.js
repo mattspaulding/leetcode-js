@@ -50,7 +50,7 @@ test("Example 2", () => {
     },
   };
 
-  const expected = 3
+  const expected = 3;
 
   expect(func(root)).toEqual(expected);
 });
