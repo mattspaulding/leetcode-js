@@ -11,19 +11,14 @@
  * @param {number} val
  * @return {TreeNode}
  */
- var searchBST = function(root, val) {
-    
-  let stack=[];
-  let p=root;
-  stack.push(p);
-  while(stack.length){
-    p=stack.pop();
-    if(p!=null){
-      if(p.val==val){
-        return p;
-      }
-      stack.push(p.right);
-      stack.push(p.left);
+var searchBST = function (root, val) {
+  while (root != null) {
+    if (root.val == val) {
+      return root;
+    } else if (root.val < val) {
+      root = root.right;
+    } else {
+      root = root.left;
     }
   }
   return null;
