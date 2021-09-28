@@ -12,7 +12,7 @@
  * @return {boolean}
  */
 var hasPathSum = function (root, targetSum) {
-  if(root==null){
+  if (root == null) {
     return false;
   }
   let stack = [];
