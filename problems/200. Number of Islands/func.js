@@ -18,17 +18,17 @@ var numIslands = function (grid) {
           let curr = stack.pop();
           const row = curr[0];
           const col = curr[1];
-          grid[row][col] = '0';
-          if (row < N-1 && grid[row + 1][col] === '1') {
+          grid[row][col] = "0";
+          if (row < N - 1 && grid[row + 1][col] === "1") {
             stack.push([row + 1, col]);
           }
-          if (row > 0 && grid[row - 1][col] === '1') {
+          if (row > 0 && grid[row - 1][col] === "1") {
             stack.push([row - 1, col]);
           }
-          if (col < M-1 && grid[row][col + 1] === '1') {
+          if (col < M - 1 && grid[row][col + 1] === "1") {
             stack.push([row, col + 1]);
           }
-          if (col > 0 && grid[row][col - 1] === '1') {
+          if (col > 0 && grid[row][col - 1] === "1") {
             stack.push([row, col - 1]);
           }
         }
